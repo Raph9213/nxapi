@@ -16,12 +16,8 @@ export function getDiscordPresence(
 
     const text: (string | undefined)[] = [];
 
-    if (context?.platform == 1) {
-        text.push('Playing on Nintendo Switch');
-    }
-    else if (context?.platform == 2) {
-        text.push('Playing on Nintendo Switch 2');
-    }
+    if (title.titleName === true) text.push(game.name);
+    else if (title.titleName) text.push(title.titleName);
 
     const online = state === PresenceState.PLAYING;
     const members = context?.activeevent?.members.filter(m => m.isPlaying);
@@ -48,9 +44,9 @@ export function getDiscordPresence(
 
     const activity = new DiscordActivity();
 
-    activity.name = game.name;
     activity.details = text[0];
     activity.state = text[1];
+    activity.statusDisplayType = 2;
 
     activity.setLargeImage(title.largeImageKey ?? game.imageUri, title.largeImageText);
 
@@ -99,6 +95,7 @@ export class DiscordActivity implements DiscordRPC.Presence {
     smallImageKey?: string = undefined;
     smallImageText?: string = undefined;
     name?: string = undefined;
+    statusDisplayType?: number | undefined;
     buttons: { label: string; url: string; }[] = [];
 
     constructor() {
