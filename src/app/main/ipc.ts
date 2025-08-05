@@ -1,5 +1,5 @@
 import { BrowserWindow, clipboard, IpcMain, IpcMainInvokeEvent, KeyboardEvent, Menu, MenuItem, ShareMenu, SharingItem, shell, systemPreferences } from 'electron';
-import { User } from 'discord-rpc';
+import { User } from '@raph9213/discord-rpc';
 import createDebug from '../../util/debug.js';
 import { ErrorDescription, ErrorDescriptionSymbol, HasErrorDescription } from '../../util/errors.js';
 import { Jwt } from '../../util/jwt.js';

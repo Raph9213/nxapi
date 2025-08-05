@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } fro
 import { ColorSchemeName, LayoutChangeEvent, Platform, StyleProp, StyleSheet, useColorScheme, View, ViewStyle } from 'react-native';
 import { i18n, TFunction } from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
-import type { User as DiscordUser } from 'discord-rpc';
+import type { User as DiscordUser } from '@raph9213/discord-rpc';
 import { NintendoAccountUserCoral } from '../../api/coral.js';
 import { NintendoAccountUserMoon } from '../../api/moon.js';
 import { ErrorResponse } from '../../api/util.js';

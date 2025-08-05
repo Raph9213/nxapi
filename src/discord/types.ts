@@ -1,4 +1,4 @@
-import DiscordRPC from 'discord-rpc';
+import DiscordRPC from '@raph9213/discord-rpc';
 import { ActiveEvent, CurrentUser, Friend, Game, PresencePlatform } from '../api/coral-types.js';
 import { ExternalMonitorPresenceInterface, ZncDiscordPresence, ZncProxyDiscordPresence } from '../common/presence.js';
 import { EmbeddedLoop } from '../util/loop.js';

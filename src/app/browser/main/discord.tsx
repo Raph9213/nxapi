@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Trans, useTranslation } from 'react-i18next';
-import { User } from 'discord-rpc';
+import { User } from '@raph9213/discord-rpc';
 import ipc, { events } from '../ipc.js';
 import { RequestState, useAsync, useEventListener } from '../util.js';
 import { DiscordPresenceSource, DiscordPresenceSourceUrl, DiscordPresenceSourceCoral, DiscordStatus } from '../../common/types.js';

@@ -1,4 +1,4 @@
-import DiscordRPC from 'discord-rpc';
+import DiscordRPC from '@raph9213/discord-rpc';
 import { PresenceGame, PresenceState } from '../api/coral-types.js';
 import { defaultTitle, platform_clients, titles } from './titles.js';
 import createDebug from '../util/debug.js';
@@ -16,8 +16,12 @@ export function getDiscordPresence(
 
     const text: (string | undefined)[] = [];
 
-    if (title.titleName === true) text.push(game.name);
-    else if (title.titleName) text.push(title.titleName);
+    if (context?.platform == 1) {
+        text.push('Playing on Nintendo Switch');
+    }
+    else if (context?.platform == 2) {
+        text.push('Playing on Nintendo Switch 2');
+    }
 
     const online = state === PresenceState.PLAYING;
     const members = context?.activeevent?.members.filter(m => m.isPlaying);
@@ -44,6 +48,7 @@ export function getDiscordPresence(
 
     const activity = new DiscordActivity();
 
+    activity.name = game.name;
     activity.details = text[0];
     activity.state = text[1];
 
@@ -93,6 +98,7 @@ export class DiscordActivity implements DiscordRPC.Presence {
     largeImageText?: string = undefined;
     smallImageKey?: string = undefined;
     smallImageText?: string = undefined;
+    name?: string = undefined;
     buttons: { label: string; url: string; }[] = [];
 
     constructor() {

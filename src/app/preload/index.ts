@@ -1,7 +1,7 @@
 import { contextBridge, ipcRenderer, SharingItem } from 'electron';
 import { EventEmitter } from 'node:events';
 import createDebug from 'debug';
-import type { User } from 'discord-rpc';
+import type { User } from '@raph9213/discord-rpc';
 import type { DiscordPresenceConfiguration, DiscordPresenceSource, DiscordStatus, LoginItem, LoginItemOptions, WindowConfiguration } from '../common/types.js';
 import type { SavedToken } from '../../common/auth/coral.js';
 import type { SavedMoonToken } from '../../common/auth/moon.js';

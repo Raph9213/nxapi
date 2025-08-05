@@ -2,9 +2,9 @@ import process from 'node:process';
 import * as net from 'node:net';
 import { EventEmitter } from 'node:events';
 import { fetch } from 'undici';
-import DiscordRPC from 'discord-rpc';
+import DiscordRPC from '@raph9213/discord-rpc';
 // @ts-expect-error
-import __BaseIpcTransport from 'discord-rpc/src/transports/ipc.js';
+import __BaseIpcTransport from '@raph9213/discord-rpc/src/transports/ipc.js';
 import createDebug from '../util/debug.js';
 
 const debug = createDebug('nxapi:discord:rpc');
